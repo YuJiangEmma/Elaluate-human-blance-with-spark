@@ -12,12 +12,11 @@ redisserverSchema = StructType(
     StructField("existType",StringType()),
     StructField("ch",StringType()),
     StructField("Incr",BooleanType()),
-    StructField("zSetEntries", ArrayType(
+    StructField("zSetEntries", ArrayType(\
             StructType([
-                StructField("element", StringType()),
-                StructField("score", StringType())   
-            ]))                                      
-        )
+                StructField("element", StringType()),\
+                StructField("score", StringType())   \
+            ]))                                       )
 ])
 # TO-DO: create a StructType for the Customer JSON that comes from Redis- before Spark 3.0.0, schema inference is not automatic
 customerSchema = StructType(
